@@ -23,7 +23,7 @@ coverage_options = {
 }
 
 def write(text):
-    st.markdown(f'<span style="color:gray">{text}</span>', unsafe_allow_html=True)
+    st.markdown(f'<span style="color:blue">{text}</span>', unsafe_allow_html=True)
 
 pokemon=st.text_input("Pokemon Name")
 try:
@@ -40,13 +40,16 @@ try:
         for coverage in coverage_options[type]:
             if coverage not in coverages:
                 coverages.append(coverage)
-    st.image(image_url)
-    write(f"{name} Info")
-    write(f"Types: {types}")
-    for stat in ["hp","attack","defense","special-attack","special-defense","speed"]:
-        write(f"{stat.title()}: {base_stats[stat]}")
-    write(f"Coverage Options: {coverages}")
-            
+    col1, col2 = st.columns(2)
+    with col1:
+        write(f"{name} Info")
+        write(f"Types: {types}")
+        for stat in ["hp","attack","defense","special-attack","special-defense","speed"]:
+            write(f"{stat.title()}: {base_stats[stat]}")
+        write(f"Coverage Options: {coverages}")
+    with col2:
+        st.image(image_url, width=100)  
+    
 except:
     if pokemon!="":
         write("Invalid Pokemon Name")
