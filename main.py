@@ -23,7 +23,7 @@ coverage_options = {
 }
 
 def write(text):
-    st.markdown(f'<spanstyle="color:white">{text}</span>', unsafe_allow_html=True)
+    st.markdown(f'<spanstyle="color:blue">{text}</span>', unsafe_allow_html=True)
 
 pokemon=st.text_input("Pokemon Name")
 try:
