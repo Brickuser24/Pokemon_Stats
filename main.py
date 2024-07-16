@@ -25,7 +25,7 @@ coverage_options = {
 def write(text):
     st.write(f":purple[{text}]")
 
-pokemon=st.text_input(":DC143C[Pokemon Name]",placeholder="Enter a Pokemon's name")
+pokemon=st.text_input(":violet[Pokemon Name]",placeholder="Enter a Pokemon's name")
 try:
     url = "https://pokeapi.co/api/v2/pokemon/" + pokemon.lower().rstrip().lstrip()
     data = requests.get(url).json()
