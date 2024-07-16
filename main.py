@@ -23,9 +23,9 @@ coverage_options = {
 }
 
 def write(text):
-    st.write(f":red[{text}]")
+    st.write(f'<span style="color:DC143C">{text}</span>', unsafe_allow_html=True)
 
-pokemon=st.text_input('<span style="color:blue">Pokemon Name</span>', unsafe_allow_html=True, placeholder="Enter a Pokemon's name")
+pokemon=st.text_input("Pokemon Name", placeholder="Enter a Pokemon's name")
 try:
     url = "https://pokeapi.co/api/v2/pokemon/" + pokemon.lower().rstrip().lstrip()
     data = requests.get(url).json()
