@@ -23,7 +23,7 @@ coverage_options = {
 }
 
 def write(text):
-    st.write(f":purple[{text}]")
+    st.write(f":violet[{text}]")
 
 pokemon=st.text_input(":violet[Pokemon Name]",placeholder="Enter a Pokemon's name")
 try:
