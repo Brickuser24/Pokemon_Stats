@@ -23,7 +23,7 @@ coverage_options = {
 }
 
 def write(text):
-    st.markdown('<spanstyle="color:blue">text</span>', unsafe_allow_html=True)
+    st.markdown('<span style="color:blue">text</span>', unsafe_allow_html=True)
 
 write("Soup")
 pokemon=st.text_input("Pokemon Name")
