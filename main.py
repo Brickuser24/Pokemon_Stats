@@ -25,6 +25,7 @@ coverage_options = {
 def write(text):
     st.markdown(f'<spanstyle="color:blue">{text}</span>', unsafe_allow_html=True)
 
+write("Soup")
 pokemon=st.text_input("Pokemon Name")
 try:
     url = "https://pokeapi.co/api/v2/pokemon/" + pokemon.lower().rstrip().lstrip()
@@ -45,7 +46,7 @@ try:
     for stat in ["hp","attack","defense","special-attack","special-defense","speed"]:
         write(f"{stat.title()}: {base_stats[stat]}")
     write(f"Coverage Options: {coverages}")
-    str.image(image_url)
+    st.image(image_url)
             
 except:
     if pokemon!="":
