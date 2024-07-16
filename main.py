@@ -40,12 +40,12 @@ try:
         for coverage in coverage_options[type]:
             if coverage not in coverages:
                 coverages.append(coverage)
+    st.image(image_url)
     write(f"{name} Info")
     write(f"Types: {types}")
     for stat in ["hp","attack","defense","special-attack","special-defense","speed"]:
         write(f"{stat.title()}: {base_stats[stat]}")
     write(f"Coverage Options: {coverages}")
-    st.image(image_url)
             
 except:
     if pokemon!="":
