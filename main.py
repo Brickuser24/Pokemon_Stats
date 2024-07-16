@@ -46,7 +46,7 @@ try:
         write(f"Types: {types}")
         for stat in ["hp","attack","defense","special-attack","special-defense","speed"]:
             write(f"{stat.title()}: {base_stats[stat]}")\
-         write(f"Coverage Options: {coverages}")
+        write(f"Coverage Options: {coverages}")
     with col2:
         st.image(image_url, width=100)  
     
