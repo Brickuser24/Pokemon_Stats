@@ -23,9 +23,8 @@ coverage_options = {
 }
 
 def write(text):
-    st.markdown('<span style="color:blue">text</span>', unsafe_allow_html=True)
+    st.markdown('<span style="color:gray">text</span>', unsafe_allow_html=True)
 
-write("Soup")
 pokemon=st.text_input("Pokemon Name")
 try:
     url = "https://pokeapi.co/api/v2/pokemon/" + pokemon.lower().rstrip().lstrip()
