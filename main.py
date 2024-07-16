@@ -23,7 +23,7 @@ coverage_options = {
 }
 
 def write(text):
-    st.write(f'<span style="color:red">{text}</span>', unsafe_allow_html=True)
+    st.write(f':red[{text}]')
 
 pokemon=st.text_input(":red[Pokemon Name]", placeholder="Enter a Pokemon's name")
 try:
