@@ -21,9 +21,13 @@ coverage_options = {
     "Electric": ["Fairy", "Grass", "Dragon"],
     "Fire": ["Dragon", "Electric", "Fighting"]
 }
+
+def write(text):
+    st.markdown(f'<spanstyle="color:white">{text}</span>', unsafe_allow_html=True)
+
 pokemon=st.text_input("Pokemon Name")
 try:
-    url = "https://pokeapi.co/api/v2/pokemon/" + pokemon.lower()
+    url = "https://pokeapi.co/api/v2/pokemon/" + pokemon.lower().rstrip().lstrip()
     data = requests.get(url).json()
     name = data['name'].title()
     image_url = data['sprites']['front_default']
@@ -36,12 +40,14 @@ try:
         for coverage in coverage_options[type]:
             if coverage not in coverages:
                 coverages.append(coverage)
-    st.write(f"{name} Info")
-    st.write(f"Types: {types}")
+    write(f"{name} Info")
+    write(f"Types: {types}")
     for stat in ["hp","attack","defense","special-attack","special-defense","speed"]:
-        st.write(f"{stat.title()}: {base_stats[stat]}")
-    st.write(f"Coverage Options: {coverages}")
+        write(f"{stat.title()}: {base_stats[stat]}")
+    write(f"Coverage Options: {coverages}")
+    str.image(image_url)
             
 except:
     if pokemon!="":
-        st.write("Invalid Pokemon Name")
+        write("Invalid Pokemon Name")
+
