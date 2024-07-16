@@ -25,7 +25,7 @@ coverage_options = {
 def write(text):
     st.markdown(f'<span style="color:white">{text}</span>', unsafe_allow_html=True)
 
-pokemon=st.text_input("Pokemon Name",placeholder="Enter a Pokemon's name")
+pokemon=st.text_input(":color[Pokemon Name]",placeholder="Enter a Pokemon's name")
 try:
     url = "https://pokeapi.co/api/v2/pokemon/" + pokemon.lower().rstrip().lstrip()
     data = requests.get(url).json()
