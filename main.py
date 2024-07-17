@@ -17,7 +17,7 @@ coverage_options = {
     "Steel": (["Ice", "Ground", "Ghost"],"DarkGray"),
     "Ghost": (["Poison", "Flying", "Bug"],"RebeccaPurple"),
     "Ice": (["Water", "Fairy", "Steel"],"DeepSkyBlue"),
-    "Dragon": (["Fire", "Grass", "Psychic"],"DarkBlue"),
+    "Dragon": (["Fire", "Grass", "Psychic"],"MediumBlue"),
     "Electric": (["Fairy", "Grass", "Dragon"],"Gold"),
     "Fire": (["Dragon", "Electric", "Fighting"],"OrangeRed")
 }
