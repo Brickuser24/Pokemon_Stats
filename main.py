@@ -30,6 +30,7 @@ try:
     types_string=":gray[Types:] "
     for type_data in data["types"]:
         type = type_data["type"]["name"].capitalize()
+        print(type)
         types_string+=f'<span style="color:{coverage_options[type][1]}">{type}</span>'+', '
     base_stats = {}
     for stat in data["stats"]:
