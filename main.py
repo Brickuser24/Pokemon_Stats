@@ -22,7 +22,7 @@ coverage_options = {
     "Fire": ["Dragon", "Electric", "Fighting"]
 }
 
-def write(text,color):
+def write(text,color="gray"):
     st.write(f':{color}[{text}]')
 
 pokemon=st.text_input("Pokemon Name", placeholder="Enter a Pokemon's name")
@@ -42,20 +42,20 @@ try:
                 coverages.append(coverage)
     col1, col2 = st.columns(2)
     with col1:
-        write(f"{name} Info","gray")
+        write(f"{name} Info")
         write(f"Types: {types}","orange")
         for stat in ["hp","attack","defense","special-attack","special-defense","speed"]:
-            write(f"{stat.title()}: {base_stats[stat]}","red")
+            write(f"{stat.title()}: {base_stats[stat]}","violet")
         write(f"Coverage Options: {coverages}","blue")
     with col2:
         st.image(image_url, width=100)  
     
 except:
     if pokemon!="":
-        write("Invalid Pokemon Name","gray")
+        write("Invalid Pokemon Name")
     else:
-        write("Guidelines for use:","gray")
-        write("-Both uppercase and lowercase work","gray")
-        write("-Ensure no spaces between words. Try to replace them with '-'","gray")
-        write("-Search groudon-primal instead of primal groudon, etc.","gray")
+        write("Guidelines for use:")
+        write("-Both uppercase and lowercase work")
+        write("-Ensure no spaces between words. Try to replace them with '-'")
+        write("-Search groudon-primal instead of primal groudon, etc.")
 
