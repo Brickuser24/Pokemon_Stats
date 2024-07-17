@@ -51,7 +51,7 @@ try:
             st.write(f":gray[{stat.title()}:] :red[{base_stats[stat]}]")
         coverage_string=":gray[Coverage Options: ]"
         for coverage in coverages:
-             coverage_string+=f'<span style="color:{coverage_options[type][1]}">{coverage}</span>'+', '
+             coverage_string+=f'<span style="color:{coverage_options[coverage][1]}">{coverage}</span>'+', '
         st.write(coverage_string[0:-2:], unsafe_allow_html=True)
     with col2:
         st.image(image_url, width=100)  
