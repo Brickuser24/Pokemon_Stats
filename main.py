@@ -27,6 +27,7 @@ try:
     url = "https://pokeapi.co/api/v2/pokemon/" + pokemon.lower().rstrip().lstrip()
     data = requests.get(url).json()
     name = data['name'].title()
+    image_url = data['sprites']['front_default']
     types_string=":gray[Types:] "
     for type_data in data["types"]:
         type = type_data["type"]["name"].capitalize()
@@ -35,17 +36,15 @@ try:
     base_stats = {}
     for stat in data["stats"]:
         base_stats[stat["stat"]["name"]] = stat["base_stat"]
-   
     coverages = []
     for type in types:
         for coverage in coverage_options[type][0]:
             if coverage not in coverages:
                 coverages.append(coverage)
-    image_url = data['sprites']['front_default']
     col1, col2 = st.columns(2)
     with col1:
         st.write(f':gray[{name}] Info')
-        st.markdown(types_string, unsafe_allow_html=True)
+        st.markdown(types_string[0:-2:], unsafe_allow_html=True)
         for stat in ["hp","attack","defense","special-attack","special-defense","speed"]:
             st.write(f":gray[{stat.title()}:] :red[{base_stats[stat]}]")
         coverage_string=":gray[Coverage Options:] "
