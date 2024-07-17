@@ -19,7 +19,7 @@ coverage_options = {
     "Ice": (["Water", "Fairy", "Steel"],"LightSkyBlue"),
     "Dragon": (["Fire", "Grass", "Psychic"],"DarkBlue"),
     "Electric": (["Fairy", "Grass", "Dragon"],"Gold"),
-    "Fire": ["Dragon", "Electric", "Fighting"]
+    "Fire": (["Dragon", "Electric", "Fighting"],"OrangeRed")
 }
 
 def write(text,color="gray"):
