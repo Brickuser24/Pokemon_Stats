@@ -55,7 +55,7 @@ except:
         write("Invalid Pokemon Name")
     else:
         write("Guidelines for use:")
-        write("Both uppercase and lowercase work")
-        write("Ensure no spaces between words. Try to replace them with '-'")
-        write("Search groudon-primal instead of primal groudon, etc.")
+        write("-Both uppercase and lowercase work")
+        write("-Ensure no spaces between words. Try to replace them with '-'")
+        write("-Search groudon-primal instead of primal groudon, etc.")
 
