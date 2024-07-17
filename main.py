@@ -8,7 +8,7 @@ coverage_options = {
     "Psychic": (["Fairy", "Ghost", "Water"],"HotPink"),
     "Fighting": (["Electric", "Ice", "Fire"],"Brown"),
     "Flying": (["Steel", "Dragon", "Fighting"],"LightSteelBlue"),
-    "Grass": (["Ground", "Poison", "Rock"],"LimeGreen"),
+    "Grass": (["Ground", "Poison", "Rock"],"Green"),
     "Ground": ["Rock", "Grass", "Dark"],
     "Bug": ["Dark", "Poison", "Ground"],
     "Rock": ["Ground", "Fire", "Electric"],
