@@ -3,7 +3,7 @@ import requests
 
 coverage_options = {
     "Normal": (["Fighting", "Psychic", "Dark"],"WhiteSmoke"),
-    "Water": (["Ice", "Steel", "Psychic"],"DeepSkyBlue"),
+    "Water": (["Ice", "Steel", "Psychic"],"DodgerBlue"),
     "Poison": ["Bug", "Grass", "Electric"],
     "Psychic": ["Fairy", "Ghost", "Water"],
     "Fighting": ["Electric", "Ice", "Fire"],
