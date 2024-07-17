@@ -9,7 +9,7 @@ coverage_options = {
     "Fighting": (["Electric", "Ice", "Fire"],"Brown"),
     "Flying": (["Steel", "Dragon", "Fighting"],"LightSteelBlue"),
     "Grass": (["Ground", "Poison", "Rock"],"ForestGreen"),
-    "Ground": ["Rock", "Grass", "Dark"],
+    "Ground": (["Rock", "Grass", "Dark"],"Sienna"),
     "Bug": ["Dark", "Poison", "Ground"],
     "Rock": ["Ground", "Fire", "Electric"],
     "Dark": ["Rock", "Electric", "Poison"],
@@ -17,7 +17,7 @@ coverage_options = {
     "Steel": ["Ice", "Ground", "Ghost"],
     "Ghost": (["Poison", "Flying", "Bug"],"RebeccaPurple"),
     "Ice": ["Water", "Fairy", "Steel"],
-    "Dragon": (["Fire", "Grass", "Psychic"],"MidnightBlue"),
+    "Dragon": (["Fire", "Grass", "Psychic"],"DarkBlue"),
     "Electric": ["Fairy", "Grass", "Dragon"],
     "Fire": ["Dragon", "Electric", "Fighting"]
 }
