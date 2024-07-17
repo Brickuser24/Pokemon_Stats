@@ -32,6 +32,7 @@ try:
         type = type_data["type"]["name"].capitalize()
         st.write(type)
         types_string+=f'<span style="color:{coverage_options[type][1]}">{type}</span>'+', '
+    st.write(types_string)
     base_stats = {}
     for stat in data["stats"]:
         base_stats[stat["stat"]["name"]] = stat["base_stat"]
