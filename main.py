@@ -48,7 +48,7 @@ try:
             types_string+=f'<span style="color:{coverage_options[type][1]}">{type}</span>'+', '
         st.markdown(types_string[0:-2:], unsafe_allow_html=True)
         for stat in ["hp","attack","defense","special-attack","special-defense","speed"]:
-            st.write(f"{stat.title()}: :red[{base_stats[stat]}]")
+            st.write(f":gray[{stat.title()}:] :red[{base_stats[stat]}]")
         write(f"Coverage Options: {coverages}","blue")
     with col2:
         st.image(image_url, width=100)  
