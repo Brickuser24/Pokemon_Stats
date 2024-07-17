@@ -22,9 +22,6 @@ coverage_options = {
     "Fire": (["Dragon", "Electric", "Fighting"],"OrangeRed")
 }
 
-def write(text,color="gray"):
-    st.write(f':{color}[{text}]')
-
 pokemon=st.text_input("Pokemon Name", placeholder="Enter a Pokemon's name")
 try:
     url = "https://pokeapi.co/api/v2/pokemon/" + pokemon.lower().rstrip().lstrip()
@@ -42,7 +39,7 @@ try:
                 coverages.append(coverage)
     col1, col2 = st.columns(2)
     with col1:
-        write(f"{name} Info")
+        st.write(f':gray[{name}] Info')
         types_string=":gray[Types:] "
         for type in types:
             types_string+=f'<span style="color:{coverage_options[type][1]}">{type}</span>'+', '
@@ -58,10 +55,10 @@ try:
     
 except:
     if pokemon!="":
-        write("Invalid Pokemon Name")
+        st.write(':gray["Invalid Pokemon Name"]')
     else:
-        write("Guidelines for use:")
-        write("-Both uppercase and lowercase work")
-        write("-Ensure no spaces between words. Try to replace them with '-'")
-        write("-Search groudon-primal instead of primal groudon, etc.")
+        st.write(":gray[Guidelines for use:]")
+        st.write(":gray[-Both uppercase and lowercase work]")
+        st.write(":gray[-Ensure no spaces between words. Try to replace them with '-']")
+        st.write(":gray[-Search groudon-primal instead of primal groudon, etc.]")
 
