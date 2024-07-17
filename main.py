@@ -43,7 +43,7 @@ try:
         base_stats[stat["stat"]["name"]] = stat["base_stat"]
     col1, col2 = st.columns(2)
     with col1:
-        st.write(f':gray[{name}] Info')
+        st.write(f':gray[{name} Info]')
         st.markdown(types_string[0:-2:], unsafe_allow_html=True)
         for stat in ["hp","attack","defense","special-attack","special-defense","speed"]:
             st.write(f":gray[{stat.title()}:] :red[{base_stats[stat]}]")
