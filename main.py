@@ -46,7 +46,7 @@ try:
         st.write(f':gray[{name} Info]')
         st.markdown(types_string[0:-2:], unsafe_allow_html=True)
         for stat in ["hp","attack","defense","special-attack","special-defense","speed"]:
-            st.write(f":gray[{stat.title()}:] :orange[{base_stats[stat]}]")
+            st.write(f":gray[{stat.title()}:] :red[{base_stats[stat]}]")
         st.write(coverage_string[0:-2:], unsafe_allow_html=True)
     with col2:
         st.image(image_url, width=100)  
