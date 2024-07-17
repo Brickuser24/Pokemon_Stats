@@ -45,7 +45,7 @@ try:
     col1, col2 = st.columns(2)
     with col1:
         write(f"{name} Info")
-        types_string=""
+        types_string="Types: "
         for type in types:
             types_string+=f'<span style="color:{type_colors[type]}">{type}</span>'+', '
         st.markdown(types_string[0:-2:], unsafe_allow_html=True)
