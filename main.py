@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 coverage_options = {
-    "Normal": ["Fighting", "Psychic", "Dark"],
+    "Normal": (["Fighting", "Psychic", "Dark"],"WhiteSmoke"),
     "Water": ["Ice", "Steel", "Psychic"],
     "Poison": ["Bug", "Grass", "Electric"],
     "Psychic": ["Fairy", "Ghost", "Water"],
@@ -15,14 +15,12 @@ coverage_options = {
     "Dark": ["Rock", "Electric", "Poison"],
     "Fairy": ["Psychic", "Water", "Grass"],
     "Steel": ["Ice", "Ground", "Ghost"],
-    "Ghost": ["Poison", "Flying", "Bug"],
+    "Ghost": (["Poison", "Flying", "Bug"],"Indigo"),
     "Ice": ["Water", "Fairy", "Steel"],
-    "Dragon": ["Fire", "Grass", "Psychic"],
+    "Dragon": (["Fire", "Grass", "Psychic"],"MediumBlue"),
     "Electric": ["Fairy", "Grass", "Dragon"],
     "Fire": ["Dragon", "Electric", "Fighting"]
 }
-
-type_colors={"Dragon":"MediumBlue","Ghost":"Indigo","Normal":"WhiteSmoke"}
 
 def write(text,color="gray"):
     st.write(f':{color}[{text}]')
@@ -39,7 +37,7 @@ try:
     types = [type_data["type"]["name"].capitalize() for type_data in data["types"]]
     coverages = []
     for type in types:
-        for coverage in coverage_options[type]:
+        for coverage in coverage_options[type][0]:
             if coverage not in coverages:
                 coverages.append(coverage)
     col1, col2 = st.columns(2)
@@ -47,7 +45,7 @@ try:
         write(f"{name} Info")
         types_string=":gray[Types:] "
         for type in types:
-            types_string+=f'<span style="color:{type_colors[type]}">{type}</span>'+', '
+            types_string+=f'<span style="color:{coverage_options[type][1]}">{type}</span>'+', '
         st.markdown(types_string[0:-2:], unsafe_allow_html=True)
         for stat in ["hp","attack","defense","special-attack","special-defense","speed"]:
             write(f"{stat.title()}: {base_stats[stat]}","violet")
