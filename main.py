@@ -22,6 +22,8 @@ coverage_options = {
     "Fire": ["Dragon", "Electric", "Fighting"]
 }
 
+type_colors={"Dragon":"Navy"}
+
 def write(text,color="gray"):
     st.write(f':{color}[{text}]')
 
@@ -43,7 +45,10 @@ try:
     col1, col2 = st.columns(2)
     with col1:
         write(f"{name} Info")
-        write(f"Types: {types}","orange")
+        types_string=""
+        for type in types:
+            types_string+=f'<span style="color:{type_colors[type]}">{type}, </span>'
+        st.markdown(types_string, unsafe_allow_html=True)
         for stat in ["hp","attack","defense","special-attack","special-defense","speed"]:
             write(f"{stat.title()}: {base_stats[stat]}","violet")
         write(f"Coverage Options: {coverages}","blue")
