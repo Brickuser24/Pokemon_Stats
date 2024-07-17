@@ -22,7 +22,7 @@ coverage_options = {
     "Fire": ["Dragon", "Electric", "Fighting"]
 }
 
-type_colors={"Dragon":"Navy","Ghost":"Indigo","Normal":"WhiteSmoke"}
+type_colors={"Dragon":"Navy","Ghost":"Indigo","Normal":"White"}
 
 def write(text,color="gray"):
     st.write(f':{color}[{text}]')
