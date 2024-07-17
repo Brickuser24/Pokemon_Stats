@@ -22,8 +22,8 @@ coverage_options = {
     "Fire": ["Dragon", "Electric", "Fighting"]
 }
 
-def write(text):
-    st.write(f':red[{text}]')
+def write(text,color):
+    st.write(f':{color}[{text}]')
 
 pokemon=st.text_input("Pokemon Name", placeholder="Enter a Pokemon's name")
 try:
@@ -42,17 +42,17 @@ try:
                 coverages.append(coverage)
     col1, col2 = st.columns(2)
     with col1:
-        write(f"{name} Info")
-        write(f"Types: {types}")
+        write(f"{name} Info","gray")
+        write(f"Types: {types}","orange")
         for stat in ["hp","attack","defense","special-attack","special-defense","speed"]:
-            write(f"{stat.title()}: {base_stats[stat]}")
-        write(f"Coverage Options: {coverages}")
+            write(f"{stat.title()}: {base_stats[stat]}","red")
+        write(f"Coverage Options: {coverages}","blue")
     with col2:
         st.image(image_url, width=100)  
     
 except:
     if pokemon!="":
-        write("Invalid Pokemon Name")
+        write("Invalid Pokemon Name","gray")
     else:
         write("Guidelines for use:")
         write("-Both uppercase and lowercase work")
