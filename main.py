@@ -50,7 +50,6 @@ try:
         st.write(coverage_string[0:-2:], unsafe_allow_html=True)
     with col2:
         st.image(image_url, width=100)  
-    
 except:
     if pokemon!="":
         st.write(':gray["Invalid Pokemon Name"]')
@@ -59,4 +58,3 @@ except:
         st.write(":gray[-Both uppercase and lowercase work]")
         st.write(":gray[-Ensure no spaces between words. Try to replace them with '-']")
         st.write(":gray[-Search groudon-primal instead of primal groudon, etc.]")
-
