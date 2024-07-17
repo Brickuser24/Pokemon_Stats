@@ -43,7 +43,7 @@ try:
     col1, col2 = st.columns(2)
     with col1:
         write(f"{name} Info")
-        write(f"Types: {types}","orange")
+        write(f"Types: {types}","green")
         for stat in ["hp","attack","defense","special-attack","special-defense","speed"]:
             write(f"{stat.title()}: {base_stats[stat]}","violet")
         write(f"Coverage Options: {coverages}","blue")
