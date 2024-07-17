@@ -27,11 +27,8 @@ try:
     url = "https://pokeapi.co/api/v2/pokemon/" + pokemon.lower().rstrip().lstrip()
     data = requests.get(url).json()
     name = data['name'].title()
-    types_string=":gray[Types:] "
-    for type_data in data["types"]:
-        type=[type_data["type"]["name"]].capitalize()
-        types_string+=f'<span style="color:{coverage_options[type][1]}">{type}</span>'+', '
-
+    types = [type_data["type"]["name"].capitalize() for type_data in data["types"]]
+    st.write(types)
     base_stats = {}
     for stat in data["stats"]:
         base_stats[stat["stat"]["name"]] = stat["base_stat"]
@@ -45,6 +42,9 @@ try:
     col1, col2 = st.columns(2)
     with col1:
         st.write(f':gray[{name}] Info')
+        types_string=":gray[Types:] "
+        for type in types:
+            types_string+=f'<span style="color:{coverage_options[type][1]}">{type}</span>'+', '
         st.markdown(types_string[0:-2:], unsafe_allow_html=True)
         for stat in ["hp","attack","defense","special-attack","special-defense","speed"]:
             st.write(f":gray[{stat.title()}:] :red[{base_stats[stat]}]")
