@@ -52,7 +52,7 @@ try:
         st.image(image_url, width=100)  
 except:
     if pokemon!="":
-        st.write(':gray["Invalid Pokemon Name"]')
+        st.write(':gray[Invalid Pokemon Name]')
     else:
         st.write(":gray[Guidelines for use:]")
         st.write(":gray[-Both uppercase and lowercase work]")
