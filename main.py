@@ -59,7 +59,7 @@ try:
             elif stat_value>=100 and stat_value<120:
                 stat_int=f'<span style="color:gold">{stat_value}</span>'
             elif stat_value>=120 and stat_value<140:
-                stat_int=f'<span style="color:forestgreen">{stat_value}</span>'
+                stat_int=f'<span style="color:limegreen">{stat_value}</span>'
             elif stat_value>=140 and stat_value<160:                
                 stat_int=f'<span style="color:darkgreen">{stat_value}</span>'
             else:                
