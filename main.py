@@ -55,9 +55,9 @@ try:
             if stat_value>0 and stat_value<80:
                 stat_int=f'<span style="color:red">{stat_value}</span>'
             elif stat_value>=80 and stat_value<100:
-                stat_int=f'<span style="color:orangered">{stat_value}</span>'
+                stat_int=f'<span style="color:orange">{stat_value}</span>'
             elif stat_value>=100 and stat_value<120:
-                stat_int=f'<span style="color:golden">{stat_value}</span>'
+                stat_int=f'<span style="color:gold">{stat_value}</span>'
             elif stat_value>=120 and stat_value<140:
                 stat_int=f'<span style="color:lime">{stat_value}</span>'
             elif stat_value>=140 and stat_value<160:                
