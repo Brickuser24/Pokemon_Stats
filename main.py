@@ -61,7 +61,7 @@ try:
             elif stat_value>=120 and stat_value<140:
                 stat_int=f'<span style="color:limegreen">{stat_value}</span>'
             elif stat_value>=140 and stat_value<160:                
-                stat_int=f'<span style="color:darkgreen">{stat_value}</span>'
+                stat_int=f'<span style="color:green">{stat_value}</span>'
             else:                
                 stat_int=f'<span style="color:DarkTurquoise">{stat_value}</span>'
             st.write(f":gray[{stat.title()}:] "+stat_int, unsafe_allow_html=True)
