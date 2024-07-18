@@ -1,6 +1,11 @@
 import streamlit as st
 import requests
 
+with open("Pokedex.txt", "r") as f:
+    read=f.read()
+    options=read.split("\n")
+    f.close()
+
 coverage_options = {
     "Normal": (["Fighting", "Psychic", "Dark"],"WhiteSmoke"),
     "Water": (["Ice", "Steel", "Psychic"],"DodgerBlue"),
@@ -22,39 +27,30 @@ coverage_options = {
     "Fire": (["Dragon", "Electric", "Fighting"],"OrangeRed")
 }
 
-pokemon=st.text_input("Pokemon Name", placeholder="Enter a Pokemon's name")
-try:
-    url = "https://pokeapi.co/api/v2/pokemon/" + pokemon.lower().rstrip().lstrip()
-    data = requests.get(url).json()
-    name = data['name'].title()
-    image_url = data['sprites']['front_default']
-    types_string=":gray[Types:] "
-    coverages = []
-    coverage_string=":gray[Coverage Options:] "
-    for type_data in data["types"]:
-        type = type_data["type"]["name"].capitalize()
-        types_string+=f'<span style="color:{coverage_options[type][1]}">{type}</span>'+', '
-        for coverage in coverage_options[type][0]:
-            if coverage not in coverages:
-                coverages.append(coverage)
-                coverage_string+=f'<span style="color:{coverage_options[coverage][1]}">{coverage}</span>'+', '
-    base_stats = {}
-    for stat in data["stats"]:
-        base_stats[stat["stat"]["name"]] = stat["base_stat"]
-    col1, col2 = st.columns(2)
-    with col1:
-        st.write(f':gray[{name} Info]')
-        st.markdown(types_string[0:-2:], unsafe_allow_html=True)
-        for stat in ["hp","attack","defense","special-attack","special-defense","speed"]:
-            st.write(f":gray[{stat.title()}:] :red[{base_stats[stat]}]")
-        st.write(coverage_string[0:-2:], unsafe_allow_html=True)
-    with col2:
-        st.image(image_url, width=100)  
-except:
-    if pokemon!="":
-        st.write(':gray[Invalid Pokemon Name]')
-    else:
-        st.write(":gray[Guidelines for use:]")
-        st.write(":gray[-Both uppercase and lowercase work]")
-        st.write(":gray[-Ensure no spaces between words. Try to replace them with '-']")
-        st.write(":gray[-Search groudon-primal instead of primal groudon, etc.]")
+pokemon=st.selectbox("Pokemon Name", placeholder="Select a Pokemon", options=options)
+url = "https://pokeapi.co/api/v2/pokemon/" + pokemon.lower().rstrip().lstrip()
+data = requests.get(url).json()
+name = data['name'].title()
+image_url = data['sprites']['front_default']
+types_string=":gray[Types:] "
+coverages = []
+coverage_string=":gray[Coverage Options:] "
+for type_data in data["types"]:
+    type = type_data["type"]["name"].capitalize()
+    types_string+=f'<span style="color:{coverage_options[type][1]}">{type}</span>'+', '
+    for coverage in coverage_options[type][0]:
+        if coverage not in coverages:
+            coverages.append(coverage)
+            coverage_string+=f'<span style="color:{coverage_options[coverage][1]}">{coverage}</span>'+', '
+base_stats = {}
+for stat in data["stats"]:
+    base_stats[stat["stat"]["name"]] = stat["base_stat"]
+col1, col2 = st.columns(2)
+with col1:
+    st.write(f':gray[{name} Info]')
+    st.markdown(types_string[0:-2:], unsafe_allow_html=True)
+    for stat in ["hp","attack","defense","special-attack","special-defense","speed"]:
+        st.write(f":gray[{stat.title()}:] :red[{base_stats[stat]}]")
+    st.write(coverage_string[0:-2:], unsafe_allow_html=True)
+with col2:
+    st.image(image_url, width=100)  
