@@ -19,7 +19,7 @@ def pokemon_analysis(pokemon):
     st.write(f":red[{base_stats}]")
     major_offense=max([base_stats[1],base_stats[3]])
     minor_offense=min([base_stats[1],base_stats[3]])
-    if major_offense[0]>=0.15*bst:
+    if major_offense[0]>=0.18*bst:
         if major_offense[0]*0.9<=minor_offense[0]:
             st.write(":red[Mixed Attacker]")
         elif major_offense[1]=="attack":
