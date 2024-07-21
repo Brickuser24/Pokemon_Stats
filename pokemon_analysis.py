@@ -14,7 +14,7 @@ def pokemon_analysis(pokemon):
     bst=0
     for stat in data["stats"]:
         base_stats.append([stat["base_stat"],stat["stat"]["name"]])
-        if stat["stat"]["name"]!="hp"
+        if stat["stat"]["name"]!="hp":
             bst+=stat["base_stat"]
     st.write(f":red[{base_stats}]")
     major_offense=max([base_stats[1],base_stats[3]])
