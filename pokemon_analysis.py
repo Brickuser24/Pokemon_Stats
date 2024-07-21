@@ -15,6 +15,7 @@ def pokemon_analysis(pokemon):
     for stat in data["stats"]:
         base_stats.append([stat["base_stat"],stat["stat"]["name"]])
         bst+=stat["base_stat"]
+    st.write(base_stats)
     major_offense=max([base_stats[1],base_stats[3]])
     minor_offense=min([base_stats[1],base_stats[3]])
     if major_offense[0]>=0.15*bst:
