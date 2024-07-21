@@ -15,18 +15,18 @@ def pokemon_analysis(pokemon):
     for stat in data["stats"]:
         base_stats.append([stat["base_stat"],stat["stat"]["name"]])
         bst+=stat["base_stat"]
-    st.write(f"{base_stats}")
+    st.write(f":red[{base_stats}]")
     major_offense=max([base_stats[1],base_stats[3]])
     minor_offense=min([base_stats[1],base_stats[3]])
     if major_offense[0]>=0.15*bst:
         if major_offense[0]-minor_offense[0]<=20:
-            st.write("Mixed Attacker")
+            st.write(":red[Mixed Attacker]")
         elif major_offense[1]=="attack":
-            st.write("Physical Attacker")
+            st.write(":red[Physical Attacker]")
         else:
-            st.write("Special Attacker")
+            st.write(":red[Special Attacker]")
     else:
-        st.write("Defensive")
+        st.write(":red[Defensive]")
 
 pokemon=st.selectbox("Pokemon Name", placeholder="Select a Pokemon", options=options)
 pokemon_analysis(pokemon)
